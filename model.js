@@ -1,12 +1,13 @@
 import mongoose from 'mongoose'
-export const Author = mongoose.model('Author', {
+
+export const User = mongoose.model('User', {
   name: String
 })
 
-export const Book = mongoose.model('Book', {
-  title: String,
-  author: {
+export const Message = mongoose.model('Message', {
+  message: String,
+  user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'Author'
+    ref: 'User'
   }
 })
